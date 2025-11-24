@@ -624,7 +624,7 @@ with st.form("client_input_form"):
             submitted = st.form_submit_button("CALCULATE PROJECTION 🚀", on_click=check_inputs)
     
             if st.button("Reset Input Fields to Default"):
-            restore_client_defaults()
+                restore_client_defaults()
 
 # ======================================================
 # PAGE 2: OUTPUT DASHBOARD
