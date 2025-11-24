@@ -759,9 +759,9 @@ elif st.session_state.page == 'output':
                 val_b_display = f"{res_b}"
                 delta_b_display = f"+{res_b - scen['retire_age']} Years"
                 desc_a = "Requires increasing your savings rate. Speak with a"
-                        <a href="https://nerdwalletwealthpartners.com/" target="_blank"> NerdWallet Wealth Partner</a> to help acheive your goals"
+                <a href="https://nerdwalletwealthpartners.com/" target="_blank"> NerdWallet Wealth Partner</a> to help acheive your goals"
                 desc_b = "Requires delaying retirement to accumulate more. Speak with a"
-                        <a href="https://nerdwalletwealthpartners.com/" target="_blank"> NerdWallet Wealth Advisor to help acheive your goals"
+                <a href="https://nerdwalletwealthpartners.com/" target="_blank"> NerdWallet Wealth Advisor to help acheive your goals"
             else:
                 tab_a_label, tab_b_label = "Strategy A: Retire Earlier", "Strategy B: Adjust Spending"
                 res_a = solve_for_earlier_age(target_conf, scen, SIM_DURATION, c_ss_benefit, params)
