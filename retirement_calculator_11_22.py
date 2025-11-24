@@ -595,29 +595,34 @@ if st.session_state.page == 'input':
         <a href="https://www.nerdwallet.com/l/wealth/advisors" target="_blank">NerdWallet Wealth Partner</a> to discuss your results
         """, unsafe_allow_html=True)
 
-        with st.form("client_input_form"):
-            c1, c2 = st.columns(2)
-            with c1:
-                st.subheader("Profile")
-                st.number_input("Current Age", min_value=18, max_value=90, value=st.session_state['in_age'], key="in_age")
-                st.number_input("Target Retirement Age", min_value=50, max_value=70, value=st.session_state['in_retire_age'], key="in_retire_age")
-                st.number_input("End of Plan Age (Life Expectancy)", min_value=50, max_value=100, value=st.session_state['in_end_age'], key="in_end_age")
-            with c2:
-                st.subheader("Income & Spending")
-                st.number_input("Current Annual Income ($)", step=1000, value=st.session_state['in_income'], key="in_income")
-                st.number_input("Annual Living Expenses ($)", step=1000, value=st.session_state['in_expenses'], key="in_expenses")
-
+with st.form("client_input_form"):
+            # Section 1: Profile (Full Width)
+            st.subheader("Profile")
+            st.number_input("Current Age", min_value=18, max_value=90, value=st.session_state['in_age'], key="in_age")
+            st.number_input("Target Retirement Age", min_value=50, max_value=70, value=st.session_state['in_retire_age'], key="in_retire_age")
+            st.number_input("End of Plan Age (Life Expectancy)", min_value=50, max_value=100, value=st.session_state['in_end_age'], key="in_end_age")
+            
+            st.markdown("<br>", unsafe_allow_html=True)
+            
+            # Section 2: Income & Spending (Full Width, stacked below Profile)
+            st.subheader("Income & Spending")
+            st.number_input("Current Annual Income ($)", step=1000, value=st.session_state['in_income'], key="in_income")
+            st.number_input("Annual Living Expenses ($)", step=1000, value=st.session_state['in_expenses'], key="in_expenses")
+                
             st.markdown("---")
-            st.markdown("### Savings and Investments")
+            st.markdown("### 💰 Savings and Investments")
+            
+            # Section 3: Savings (Kept side-by-side for compactness)
             sc1, sc2 = st.columns(2)
             with sc1:
                 st.number_input("Total Invested Assets ($)", step=1000, value=st.session_state['in_capital'], key="in_capital")
                 st.number_input("Actual Annual Savings Amount ($)", step=1000, value=st.session_state['in_savings'], key="in_savings", help="Any surplus not listed here is considered 'Leakage'.")
+            with sc2:
                 st.number_input("Annual Savings Growth Rate (%)", step=0.5, value=st.session_state['in_growth'], key="in_growth", help="How much will your contributions increase each year?")
 
             st.markdown("<br>", unsafe_allow_html=True)
-            submitted = st.form_submit_button("CALCULATE PROJECTION", on_click=check_inputs)
-
+            submitted = st.form_submit_button("CALCULATE PROJECTION 🚀", on_click=check_inputs)
+    
         if st.button("Reset Input Fields to Default"):
             restore_client_defaults()
 
