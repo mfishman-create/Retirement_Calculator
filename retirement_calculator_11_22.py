@@ -596,12 +596,13 @@ if st.session_state.page == 'input':
         """, unsafe_allow_html=True)
 
         with st.form("client_input_form"):
-            c1, c2 = st.columns(2)
+            c1 = st.columns(1)
             with c1:
                 st.subheader("Profile")
                 st.number_input("Current Age", min_value=18, max_value=90, value=st.session_state['in_age'], key="in_age")
                 st.number_input("Target Retirement Age", min_value=50, max_value=70, value=st.session_state['in_retire_age'], key="in_retire_age")
                 st.number_input("End of Plan Age (Life Expectancy)", min_value=50, max_value=100, value=st.session_state['in_end_age'], key="in_end_age")
+            c2 = st.columns(1)
             with c2:
                 st.subheader("Income & Spending")
                 st.number_input("Current Annual Income ($)", step=1000, value=st.session_state['in_income'], key="in_income")
