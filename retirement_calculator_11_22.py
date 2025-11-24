@@ -635,7 +635,7 @@ elif st.session_state.page == 'output':
     params = st.session_state.company_params
 
     with st.sidebar:
-        st.markdown('<div class="brand-text" style="font-size:18px;">nerdwallet <span class="brand-accent">WP</span></div>', unsafe_allow_html=True)
+        st.markdown('<div class="brand-text" style="font-size:18px;">nerdwallet <span class="brand-accent">Wealth Partners</span></div>', unsafe_allow_html=True)
         st.markdown("---")
         st.header("Data Reference")
         st.subheader("Client Inputs")
