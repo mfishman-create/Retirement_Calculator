@@ -592,7 +592,7 @@ if st.session_state.page == 'input':
         Input your details below to generate a free probability assessment
 
         Want to speak to a profesional? Book a free call with a
-        <a href="https://www.nerdwallet.com/l/wealth/advisors" target="_blank">NerdWallet Wealth Partner</a> to discuss your results
+        <a href="https://nerdwalletwealthpartners.com/" target="_blank">NerdWallet Wealth Partner</a> to discuss your results
         """, unsafe_allow_html=True)
 
         with st.form("client_input_form"):
