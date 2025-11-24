@@ -613,7 +613,6 @@ if st.session_state.page == 'input':
             with sc1:
                 st.number_input("Total Invested Assets ($)", step=1000, value=st.session_state['in_capital'], key="in_capital")
                 st.number_input("Actual Annual Savings Amount ($)", step=1000, value=st.session_state['in_savings'], key="in_savings", help="Any surplus not listed here is considered 'Leakage'.")
-            with sc2:
                 st.number_input("Annual Savings Growth Rate (%)", step=0.5, value=st.session_state['in_growth'], key="in_growth", help="How much will your contributions increase each year?")
 
             st.markdown("<br>", unsafe_allow_html=True)
